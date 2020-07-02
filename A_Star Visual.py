@@ -4,7 +4,7 @@ from tkinter import *
 from tkinter import ttk
 
 screen = pygame.display.set_mode((500, 500))
-pygame.display.set_caption("A* Star")
+pygame.display.set_caption("Rohan - A* Star")
 
 
 class Spot:
@@ -104,6 +104,7 @@ def on_submit():
 
 window = Tk()
 window.geometry("200x110")
+window.title("Coordinates")
 window.config(background="black")
 start_label = Label(window, text="Start(x,y): ")
 start_box = Entry(window)
@@ -192,7 +193,10 @@ def main():
 
             open_set.pop(lowest_index)
             closed_set.append(current)
-
+            ########
+            if var.get():
+            	current.show(red, 0)
+            ########
             neighbours = current.neighbours
             for i in range(len(neighbours)):
                 neighbour = neighbours[i]
@@ -207,6 +211,10 @@ def main():
                         neighbour.g = tempG
                         check = True
                         open_set.append(neighbour)
+                        #####
+                        if var.get():
+                        	neighbour.show(green, 0)
+                        #####
                     if check:
                         neighbour.h = heuristic(neighbour, end)
                         neighbour.f = neighbour.g + neighbour.h
@@ -216,11 +224,11 @@ def main():
             print("No Solution")
             break
         # Show Visualization
-        if var.get():
+        '''if var.get():
             for i in range(len(open_set)):
                 open_set[i].show(green, 0)
             for i in range(len(closed_set)):
-                closed_set[i].show(red, 0)
+                closed_set[i].show(red, 0)'''
 
 
 if __name__ == "__main__":
