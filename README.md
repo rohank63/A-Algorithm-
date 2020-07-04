@@ -1,4 +1,14 @@
 # A-Algorithm-
-Python Script of A* Algorithm along with Visualization 
+Python Script for A* Algorithm along with Visualization 
 
-## Run the A_StarVisual.py script
+*Run the A_StarVisual.py script*
+
+![Coordinates](/samples/Coordinates.jpg)
+
+- One without Show Path
+
+![Path](/samples/Path_finder.jpg)
+
+- One with Show Path
+
+![Path](/samples/Visual.jpg)
